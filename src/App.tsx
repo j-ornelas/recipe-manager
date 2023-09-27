@@ -1,5 +1,8 @@
+import { Home } from './pages/Home';
+// import { HomeWithContext } from './pages/HomeWithContext';
+
 function App() {
-  return <div>app</div>;
+  return <Home />;
 }
 
 export default App;
