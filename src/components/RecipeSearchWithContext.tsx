@@ -6,12 +6,17 @@ export function RecipeSearchWithContext() {
   const { handleSearch } = useRecipeSearch();
 
   return (
-    <div>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        handleSearch(searchInput);
+      }}
+    >
       <input
         value={searchInput}
         onChange={(e) => setSearchInput(e.target.value)}
       ></input>
-      <button onClick={() => handleSearch(searchInput)}>Search</button>
-    </div>
+      <button type="submit">Search</button>
+    </form>
   );
 }

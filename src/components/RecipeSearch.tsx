@@ -6,12 +6,17 @@ interface Props {
 export function RecipeSearch({ handleSearch }: Props) {
   const [searchInput, setSearchInput] = useState('');
   return (
-    <div>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        handleSearch(searchInput);
+      }}
+    >
       <input
         value={searchInput}
         onChange={(e) => setSearchInput(e.target.value)}
       ></input>
-      <button onClick={() => handleSearch(searchInput)}>Search</button>
-    </div>
+      <button type="submit">Search</button>
+    </form>
   );
 }
